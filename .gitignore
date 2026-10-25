@@ -1,0 +1,19 @@
+## Visual Studio & IDEs
+.vs/
+.vscode/*
+!.vscode/extensions.json
+*.user
+*.userosscache
+*.suo
+
+## Build results (.NET)
+[Bb]in/
+[Oo]bj/
+
+## Frontend & Node
+frontend/node_modules/
+frontend/dist/
+*.log
+
+## Temporary & test results
+TestResults/
