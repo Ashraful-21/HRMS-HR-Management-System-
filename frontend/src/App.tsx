@@ -285,45 +285,45 @@ export default function App() {
   const getModules = () => {
     if (isSuperAdmin) {
       return [
-        { key: 'dashboard', label: 'Executive Dashboard', icon: LayoutDashboard },
-        { key: 'employees', label: 'Workforce', icon: Users },
-        { key: 'attendance', label: 'Attendance', icon: Clock },
-        { key: 'leave', label: 'Leave', icon: CalendarDays },
-        { key: 'payroll', label: 'Payroll', icon: Banknote },
-        { key: 'recruitment', label: 'Recruitment (ATS)', icon: Briefcase },
-        { key: 'performance', label: 'Performance', icon: Award },
-        { key: 'assets', label: 'Assets', icon: Laptop },
-        { key: 'organization', label: 'Organization', icon: Building2 },
-        { key: 'reports', label: 'Reports', icon: FileSpreadsheet },
-        { key: 'admin', label: 'System Admin', icon: Shield }
+        { key: 'dashboard', label: 'I. Executive Dashboard', icon: LayoutDashboard },
+        { key: 'employees', label: 'II. Workforce Directory', icon: Users },
+        { key: 'attendance', label: 'III. Attendance Logs', icon: Clock },
+        { key: 'leave', label: 'IV. Leave Allocation', icon: CalendarDays },
+        { key: 'payroll', label: 'V. Payroll & Payslips', icon: Banknote },
+        { key: 'recruitment', label: 'VI. Recruitment ATS', icon: Briefcase },
+        { key: 'performance', label: 'VII. Performance Cycle', icon: Award },
+        { key: 'assets', label: 'VIII. Asset Inventory', icon: Laptop },
+        { key: 'organization', label: 'IX. Organization Tree', icon: Building2 },
+        { key: 'reports', label: 'X. Reports & Registers', icon: FileSpreadsheet },
+        { key: 'admin', label: 'XI. System Governance', icon: Shield }
       ];
     }
     if (isHRManager) {
       return [
-        { key: 'dashboard', label: 'HR Dashboard', icon: LayoutDashboard },
-        { key: 'employees', label: 'Workforce', icon: Users },
-        { key: 'attendance', label: 'Attendance', icon: Clock },
-        { key: 'leave', label: 'Leave Management', icon: CalendarDays },
-        { key: 'payroll', label: 'Payroll', icon: Banknote },
-        { key: 'recruitment', label: 'Recruitment (ATS)', icon: Briefcase },
-        { key: 'performance', label: 'Performance', icon: Award },
-        { key: 'assets', label: 'Assets', icon: Laptop },
-        { key: 'organization', label: 'Organization', icon: Building2 },
-        { key: 'reports', label: 'Reports', icon: FileSpreadsheet }
+        { key: 'dashboard', label: 'I. HR Management', icon: LayoutDashboard },
+        { key: 'employees', label: 'II. Workforce Directory', icon: Users },
+        { key: 'attendance', label: 'III. Attendance Records', icon: Clock },
+        { key: 'leave', label: 'IV. Leave Administration', icon: CalendarDays },
+        { key: 'payroll', label: 'V. Payroll Engine', icon: Banknote },
+        { key: 'recruitment', label: 'VI. Recruitment ATS', icon: Briefcase },
+        { key: 'performance', label: 'VII. Performance Cycle', icon: Award },
+        { key: 'assets', label: 'VIII. Asset Custody', icon: Laptop },
+        { key: 'organization', label: 'IX. Organization Structure', icon: Building2 },
+        { key: 'reports', label: 'X. Reports & Registers', icon: FileSpreadsheet }
       ];
     }
     if (isEmployee) {
       return [
-        { key: 'dashboard', label: 'My Portal', icon: LayoutDashboard },
-        { key: 'attendance', label: 'My Attendance', icon: Clock },
-        { key: 'leave', label: 'My Leaves', icon: CalendarDays },
-        { key: 'payroll', label: 'My Payslips', icon: Banknote },
-        { key: 'assets', label: 'My Equipment', icon: Laptop },
-        { key: 'performance', label: 'My Performance', icon: Award }
+        { key: 'dashboard', label: 'I. Employee Self-Service', icon: LayoutDashboard },
+        { key: 'attendance', label: 'II. My Attendance', icon: Clock },
+        { key: 'leave', label: 'III. My Leaves', icon: CalendarDays },
+        { key: 'payroll', label: 'IV. My Payslips', icon: Banknote },
+        { key: 'assets', label: 'V. My Equipment', icon: Laptop },
+        { key: 'performance', label: 'VI. My Performance', icon: Award }
       ];
     }
     return [
-      { key: 'dashboard', label: 'Overview', icon: LayoutDashboard }
+      { key: 'dashboard', label: 'I. Overview', icon: LayoutDashboard }
     ];
   };
 
@@ -340,20 +340,16 @@ export default function App() {
 
   return (
     <div className="app-container">
-      <div className="ambient-bg">
-        <div className="orb orb-1" />
-        <div className="orb orb-2" />
-        <div className="orb orb-3" />
-      </div>
-
-      {/* Top Navbar */}
+      {/* Top Architectural Navbar */}
       <header className="top-nav">
         <div className="brand" onClick={() => user && setMainModule('dashboard')} style={{ cursor: 'pointer' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <Building2 size={24} color="#6366f1" />
-            <span>HRMS Enterprise</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <Building2 size={24} color="#b69355" />
+            <span style={{ fontFamily: 'var(--dp-typography-serif)', fontSize: '1.45rem', fontWeight: 600, letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+              HRMS Enterprise
+            </span>
           </div>
-          <span className="brand-badge">Enterprise Edition v1.0</span>
+          <span className="brand-badge">ARCHITECTURAL EDITION</span>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
@@ -366,7 +362,7 @@ export default function App() {
                 onClick={() => setShowNotifDropdown(!showNotifDropdown)}
                 aria-label="Notifications"
               >
-                <Bell size={20} />
+                <Bell size={18} color="#262321" />
                 {unreadCount > 0 && (
                   <span className="notification-badge">
                     {unreadCount > 9 ? '9+' : unreadCount}
@@ -457,15 +453,13 @@ export default function App() {
                   <div style={{ 
                     width: 52, 
                     height: 52, 
-                    borderRadius: 14, 
-                    background: 'rgba(99, 102, 241, 0.2)', 
-                    color: '#818cf8', 
-                    border: '1px solid rgba(99, 102, 241, 0.4)',
+                    background: 'var(--dp-color-panel)', 
+                    color: 'var(--dp-color-accent-text)', 
+                    border: '1px solid var(--dp-color-accent)',
                     display: 'flex', 
                     alignItems: 'center', 
                     justifyContent: 'center',
-                    margin: '0 auto 1rem',
-                    boxShadow: '0 0 20px rgba(99, 102, 241, 0.3)'
+                    margin: '0 auto 1rem'
                   }}>
                     <Shield size={26} />
                   </div>
@@ -477,19 +471,18 @@ export default function App() {
 
                 {/* Email info banner */}
                 <div style={{
-                  background: 'rgba(99, 102, 241, 0.08)',
-                  border: '1px solid rgba(99, 102, 241, 0.25)',
-                  borderRadius: 'var(--radius-md)',
+                  background: 'var(--dp-color-panel)',
+                  border: '1px solid var(--dp-color-panel-line)',
                   padding: '0.85rem 1rem',
                   marginBottom: '1.25rem',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '10px'
                 }}>
-                  <Mail size={20} color="#818cf8" style={{ flexShrink: 0 }} />
+                  <Mail size={20} color="#b69355" style={{ flexShrink: 0 }} />
                   <div style={{ fontSize: '0.85rem' }}>
-                    <span style={{ color: 'var(--text-muted)' }}>Security Code dispatched to: </span>
-                    <strong style={{ color: '#ffffff', fontFamily: 'var(--font-mono)' }}>{maskedEmail || 'registered email'}</strong>
+                    <span style={{ color: 'var(--dp-color-ink-2)' }}>Security Code dispatched to: </span>
+                    <strong style={{ color: 'var(--dp-color-ink)', fontFamily: 'var(--font-mono)' }}>{maskedEmail || 'registered email'}</strong>
                   </div>
                 </div>
 
@@ -497,9 +490,8 @@ export default function App() {
                   <div 
                     onClick={() => setOtpCode(devOtpHint)}
                     style={{
-                      background: 'rgba(16, 185, 129, 0.12)',
-                      border: '1px dashed #10b981',
-                      borderRadius: 'var(--radius-md)',
+                      background: '#eaf4ed',
+                      border: '1px solid #4a8a61',
                       padding: '0.65rem 1rem',
                       marginBottom: '1.25rem',
                       cursor: 'pointer',
@@ -507,12 +499,12 @@ export default function App() {
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       fontSize: '0.8rem',
-                      color: '#34d399'
+                      color: '#1e5e3a'
                     }}
                     title="Click to auto-fill code in development mode"
                   >
                     <span>⚡ <strong>Local Demo / Dev OTP:</strong></span>
-                    <code style={{ fontSize: '1rem', fontWeight: 800, letterSpacing: '2px', background: 'rgba(0,0,0,0.3)', padding: '2px 8px', borderRadius: 4 }}>
+                    <code style={{ fontSize: '1rem', fontWeight: 800, letterSpacing: '2px', background: 'rgba(0,0,0,0.06)', padding: '2px 8px' }}>
                       {devOtpHint}
                     </code>
                     <span style={{ fontSize: '0.75rem', textDecoration: 'underline' }}>Click to Fill</span>
@@ -521,11 +513,10 @@ export default function App() {
 
                 {infoMsg && !devOtpHint && (
                   <div style={{
-                    background: 'rgba(14, 165, 233, 0.1)',
-                    border: '1px solid rgba(14, 165, 233, 0.3)',
-                    color: '#38bdf8',
+                    background: 'var(--dp-color-panel)',
+                    border: '1px solid var(--dp-color-accent)',
+                    color: 'var(--dp-color-ink)',
                     padding: '0.65rem 1rem',
-                    borderRadius: 'var(--radius-md)',
                     marginBottom: '1.25rem',
                     fontSize: '0.8rem'
                   }}>
@@ -589,7 +580,7 @@ export default function App() {
                       onClick={handleResendOtp}
                       disabled={loading}
                       className="text-btn"
-                      style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.8rem', color: '#818cf8' }}
+                      style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.8rem', color: '#b69355' }}
                     >
                       <RefreshCw size={14} className={loading ? 'animate-spin' : ''} /> Resend Code
                     </button>
@@ -603,15 +594,15 @@ export default function App() {
                   <div style={{ 
                     width: 48, 
                     height: 48, 
-                    borderRadius: 12, 
-                    background: 'rgba(99, 102, 241, 0.15)', 
-                    color: '#818cf8', 
+                    background: 'var(--dp-color-field)', 
+                    color: 'var(--dp-color-accent-light)', 
+                    border: '1px solid var(--dp-color-accent)',
                     display: 'flex', 
                     alignItems: 'center', 
                     justifyContent: 'center',
                     margin: '0 auto 1rem'
                   }}>
-                    <Lock size={24} />
+                    <Lock size={22} />
                   </div>
                   <h1 className="card-title">Welcome back</h1>
                   <p className="card-subtitle">Sign in to your Human Resource Portal</p>
@@ -753,7 +744,7 @@ export default function App() {
                     onClick={() => setMainModule(mod.key as any)}
                     className={`nav-tab-btn ${isActive ? 'active' : ''}`}
                   >
-                    <IconComponent size={16} color={isActive ? '#818cf8' : 'currentColor'} />
+                    <IconComponent size={16} color={isActive ? '#d2b071' : 'currentColor'} />
                     <span>{mod.label}</span>
                   </button>
                 );
